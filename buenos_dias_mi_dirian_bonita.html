@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff6f91">
+<title>Buenos Días, mi Dirian Bonita 💗</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; overflow-x:hidden;
+  font-family:Georgia,"Times New Roman",serif;
+  color:#5b2439;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(255,255,255,.9),transparent 22%),
+    radial-gradient(circle at 85% 20%,rgba(255,190,210,.55),transparent 25%),
+    linear-gradient(135deg,#ffd9e5 0%,#fff0f5 45%,#f8d9e8 100%);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.3;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:26px 26px;
+}
+.cover{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:30px 18px;position:relative;
+}
+.cover-card{
+  width:min(94%,520px);text-align:center;padding:42px 25px 35px;
+  border:1px solid rgba(255,255,255,.8);border-radius:34px;
+  background:rgba(255,255,255,.68);backdrop-filter:blur(12px);
+  box-shadow:0 25px 70px rgba(121,45,75,.18);
+  animation:enter 1s ease;
+}
+.tiny{font-size:18px;letter-spacing:2px}
+h1{font-size:clamp(38px,11vw,64px);line-height:1.05;margin:18px 0 12px}
+.name{color:#ef4770;font-style:italic}
+.subtitle{font-size:18px;line-height:1.6;margin:0 auto 28px;max-width:420px}
+.heart-main{font-size:65px;animation:pulse 1.7s infinite}
+.btn{
+  border:0;border-radius:999px;padding:17px 30px;
+  background:linear-gradient(135deg,#ff4f78,#ef3564);
+  color:white;font-size:17px;font-weight:bold;cursor:pointer;
+  box-shadow:0 12px 30px rgba(239,53,100,.3);
+  transition:.25s; font-family:inherit;
+}
+.btn:hover{transform:translateY(-3px) scale(1.02)}
+.scroll{display:block;margin-top:28px;color:#9b5069;font-size:14px}
+.message-section{padding:55px 18px 85px}
+.message{
+  width:min(94%,650px);margin:auto;padding:34px 27px;
+  border-radius:30px;background:rgba(255,250,252,.86);
+  box-shadow:0 20px 55px rgba(121,45,75,.15);
+  border:1px solid rgba(255,255,255,.9);
+  opacity:0;transform:translateY(35px);transition:1s ease;
+}
+.message.show{opacity:1;transform:none}
+.message h2{text-align:center;font-size:31px;margin:0 0 28px}
+.line{
+  display:flex;gap:15px;align-items:flex-start;padding:18px 0;
+  border-bottom:1px solid rgba(220,120,145,.2);
+  font-size:18px;line-height:1.65;
+}
+.icon{font-size:28px;min-width:38px;text-align:center}
+.highlight{
+  margin-top:25px;padding:24px;text-align:center;border-radius:22px;
+  background:linear-gradient(135deg,#ffd2df,#ffe9ef);
+  font-size:25px;font-style:italic;font-weight:bold;color:#ef4770;
+}
+.final{text-align:center;margin-top:30px;font-size:18px;line-height:1.7}
+.signature{font-size:24px;color:#ef4770;font-weight:bold;margin-top:8px}
+.float{
+ position:fixed;bottom:-50px;z-index:1;pointer-events:none;
+ animation:rise linear infinite;opacity:.65;font-size:24px;
+}
+#secret{display:none;text-align:center;margin-top:28px;animation:enter .7s ease}
+.secret-box{
+ display:inline-block;padding:15px 20px;border-radius:18px;
+ background:#fff3f7;color:#c83761;font-size:17px;
+}
+@keyframes pulse{50%{transform:scale(1.12)}}
+@keyframes enter{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+@media(max-width:430px){
+ .cover-card{padding:34px 20px 30px}
+ .message{padding:28px 19px}
+ .line{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover-card">
+    <div class="tiny">☀️ UNA PEQUEÑA SORPRESA PARA TI ☀️</div>
+    <div class="heart-main">💗</div>
+    <h1>Buenos Días,<br><span class="name">mi Dirian Bonita</span></h1>
+    <p class="subtitle">
+      Antes de que empieces tu día, quería dejarte algo que espero
+      te saque una sonrisa. 🌷
+    </p>
+    <button class="btn" onclick="openMessage()">♡ Abrir mi sorpresa ♡</button>
+    <span class="scroll">Toca el botón... tengo algo que decirte ✨</span>
+  </div>
+</section>
+
+<section class="message-section" id="mensaje">
+  <div class="message" id="card">
+    <h2>Buenos días, bonita 💕</h2>
+
+    <div class="line">
+      <div class="icon">💭</div>
+      <div>Solo quería recordarte algo antes de que empiece tu día:
+      <b>hay alguien por aquí que piensa en ti más de lo que debería.</b></div>
+    </div>
+
+    <div class="line">
+      <div class="icon">😊</div>
+      <div>Alguien que quiere verte sonreír y que se alegra con cada
+      pequeño momento bonito que tienes.</div>
+    </div>
+
+    <div class="line">
+      <div class="icon">🌷</div>
+      <div>Y aunque quizá no siempre sepa cómo decirlo,
+      <b>te quiero y me importas muchísimo.</b></div>
+    </div>
+
+    <div class="line">
+      <div class="icon">✨</div>
+      <div>Espero que hoy te pase algo bonito... aunque sea una pequeña
+      razón para sonreír.</div>
+    </div>
+
+    <div class="highlight">
+      Y si hoy no aparece ninguna razón...<br>
+      aquí tienes una: <br>
+      <span>me encantas. 💗</span>
+    </div>
+
+    <div class="final">
+      Que tengas un día increíble, mi Dirian bonita. ☀️<br>
+      <div class="signature">Aquí estaré, siempre para ti. ❤️</div>
+      <div id="secret">
+        <div class="secret-box">P.D. Sonríe... sabía que este mensaje iba a funcionar. 😌💕</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function openMessage(){
+  const card=document.getElementById("card");
+  card.classList.add("show");
+  document.getElementById("mensaje").scrollIntoView({behavior:"smooth"});
+  setTimeout(()=>document.getElementById("secret").style.display="block",1800);
+}
+const emojis=["💗","💕","🌷","✨","💖","🌸","♡"];
+for(let i=0;i<22;i++){
+  const e=document.createElement("span");
+  e.className="float";
+  e.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left=Math.random()*100+"vw";
+  e.style.animationDuration=(6+Math.random()*7)+"s";
+  e.style.animationDelay=(-Math.random()*10)+"s";
+  e.style.fontSize=(17+Math.random()*17)+"px";
+  document.body.appendChild(e);
+}
+</script>
+</body>
+</html>
